@@ -1,0 +1,46 @@
+﻿@model QuanLyThuaGio.Api.Entities.Giangday
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Giangday</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Magv" />
+            <input type="hidden" asp-for="Malop" />
+            <input type="hidden" asp-for="Mamon" />
+            <div class="form-group">
+                <label asp-for="Sosv" class="control-label"></label>
+                <input asp-for="Sosv" class="form-control" />
+                <span asp-validation-for="Sosv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Namhoc" class="control-label"></label>
+                <input asp-for="Namhoc" class="form-control" />
+                <span asp-validation-for="Namhoc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ghichu" class="control-label"></label>
+                <input asp-for="Ghichu" class="form-control" />
+                <span asp-validation-for="Ghichu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

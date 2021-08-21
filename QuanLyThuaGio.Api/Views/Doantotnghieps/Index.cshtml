@@ -1,0 +1,65 @@
+﻿@model IEnumerable<QuanLyThuaGio.Api.Entities.Doantotnghiep>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sodetai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sodoanpbien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Namhoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ghichu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MagvNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MalopNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sodetai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sodoanpbien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Namhoc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ghichu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MagvNavigation.Magv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MalopNavigation.Malop)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Ma">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Ma">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Ma">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
